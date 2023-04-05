@@ -1,0 +1,12 @@
+.day { 
+    background-image: url(../assets/Weather-Day.jpg);
+    
+};
+
+.night {
+    background-image: url(../assets/Weather-Night.jpg);
+};
+
+.rainy {
+    background-image: url(../assets/Weather-Rainy.jpg);
+};
