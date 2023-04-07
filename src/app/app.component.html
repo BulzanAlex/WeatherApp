@@ -1,9 +1,9 @@
-<!-- this first element will be the wrapper to all the site's content and will also provide the background -->
-<div [ngClass]="{
-  'day': currentTime.getHours() >= 6 && currentTime.getHours() < 18,
-  'night': currentTime.getHours() < 6 || currentTime.getHours() >= 18
-}">
+<div class="background">
+  <img src="../assets/Weather-Day.jpg" *ngIf="14 <= 15">
+  <img src="../assets/Weather-Night.jpg" *ngIf="14 > 15">
+</div>
 
+<section>
   <div class="top-data">
 
   </div>
@@ -12,4 +12,5 @@
 
   </div>
 
-</div>
+</section>
+
