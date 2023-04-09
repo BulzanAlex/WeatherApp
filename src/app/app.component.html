@@ -1,16 +1,23 @@
 <div class="background">
-  <img src="../assets/Weather-Day.jpg" *ngIf="14 > 15">
-  <img src="../assets/Weather-Night.jpg" *ngIf="14 < 15">
+  <img src="../assets/Weather-Day.jpg" *ngIf="14 < 15 && 16 < 17">
+  <img src="../assets/Weather-Night.jpg" *ngIf="14 > 15">
 </div>
 
-<section>
-  <div class="top-data">
+<section class="wrapper">
+  <section class="top-data">
+    <div class="weather-icon">
+      <img src="../assets/cloudy.png" *ngIf="14 > 15">
+      <img src="../assets/rain-chance.png" *ngIf="14 < 15">
+    </div>
+    <div class="weather-data">
+      <div class="location">Vila Real</div>
+      <div class="temperature">{{ 24.30 | number: '1.0-0'}}°C</div>
+    </div>
+  </section>
 
-  </div>
+  <section class="bottom-data">
 
-  <div class="bottom-data">
-
-  </div>
+  </section>
 
 </section>
 
