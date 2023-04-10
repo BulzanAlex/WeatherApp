@@ -9,7 +9,7 @@ export class WeatherService {
   constructor(private http: HttpClient) { }
 
   getWeather() {
-    return 
+    return this.http.get('')
   }
 
 }
