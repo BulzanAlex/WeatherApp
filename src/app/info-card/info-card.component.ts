@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+// import { precipitation } from '../../app/app.component'
 
 @Component({
   selector: 'info-card',
@@ -8,5 +9,5 @@ import { Component, Input } from '@angular/core';
 export class InfoCardComponent {
   @Input() cardName = 'string';
   @Input() iconUrl = 'string';
-  @Input() cardValue = 'string';
+  @Input() cardValue: number | string= '' ;
 }

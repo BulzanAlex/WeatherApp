@@ -1,27 +1,26 @@
 <div class="background" *ngIf="weatherData">
   <!-- *ngIf="weatherData.current.is_day >= 1" -->
   <img src="../assets/Weather-Day.jpg" *ngIf="weatherData.current.is_day >= 1" >
-  <img src="../assets/Weather-Night.jpg" *ngIf="14 > 15">
+  <img src="../assets/Weather-Night.jpg" *ngIf="weatherData.current.is_day <= 0" >
 </div>
 
 <section class="wrapper" *ngIf="weatherData">
   <section class="top-data">
     <div class="weather-icon">
-      <img src="../assets/cloudy.png" *ngIf="14 > 15">
-      <img src="../assets/rain-chance.png" *ngIf="14 < 15">
+      <img src={{apiIconURL}}>
     </div>
     <div class="weather-data">
-      <div class="location">Vila Real</div>
-      <div class="temperature">{{ 24.30 | number: '1.0-0'}}°C</div>
+      <div class="location">{{weatherData.location.name}}</div>
+      <div class="temperature">{{ weatherData.current.temp_c | number: '1.0-0'}}°C</div>
     </div>
   </section>
 
   <section class="bottom-data">
     <!-- Custom angular components, they're used to show data from the API, cardName = type of data; iconUrl = what image to show; cardValue= value received from API  -->
-    <info-card cardName="Max" iconUrl="../assets/hot.png" cardValue="26°C"></info-card>
-    <info-card cardName="Min" iconUrl="../assets/cold.png" cardValue="12°C"></info-card>
-    <info-card cardName="Humidity" iconUrl="../assets/humidity.png" cardValue="15%"></info-card>
-    <info-card cardName="Wind" iconUrl="../assets/wind.png" cardValue="25km/h"></info-card>
+    <!-- <info-card cardName="Max" iconUrl="../assets/hot.png" cardValue="26°C"></info-card> -->
+    <info-card cardName="Precipitation" iconUrl="../assets/rain-chance.png" [cardValue]="weatherData.current.precip_mm + 'mm'" ></info-card>
+    <info-card cardName="Humidity" iconUrl="../assets/humidity.png" [cardValue]="weatherData.current.humidity + '%'" ></info-card>
+    <info-card cardName="Wind" iconUrl="../assets/wind.png" [cardValue]="weatherData.current.wind_kph + 'km/h'" ></info-card>
   </section>
 
 </section>

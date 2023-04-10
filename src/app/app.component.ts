@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/enviroments/enviroment';
 import { WeatherService } from './services/weather.service';
-import { WeatherData, Current } from './models/weather.model';
+import { WeatherData } from './models/weather.model';
 
 @Component({
   selector: 'app-root',
@@ -9,11 +9,15 @@ import { WeatherData, Current } from './models/weather.model';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+  
+  apiIconURL: string = '';
+  precipitation: number | string = 0;
+  humidity: number | string = 0;
 
   constructor(private weatherService: WeatherService) {
 
   }
-  cityName: string = 'Porto'
+  cityName: string = 'Lisboa'
   weatherData?: WeatherData;
 
   ngOnInit(): void {
@@ -24,7 +28,7 @@ export class AppComponent implements OnInit {
 
         console.log(response);
 
-
+        this.apiIconURL = this.weatherData.current.condition.icon;
       }
     });
   }
