@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4.
 
--This is a WeatherApp which runs on a localhost using Node.js. It uses a geolocation API (Abstract API - https://app.abstractapi.com/dashboard) to get the user's current location upon loading the site, then passes the city's location to a weather API (Weather API from Rapid API - https://rapidapi.com/Zoom4Develop/api/weather1395/), afterwards the site takes the responses and shows the name of the city, the current temperature, precipitation per mm, humidity and wind speed.
+-This is a WeatherApp which runs on a localhost using Node.js and was built using Angular. It uses a geolocation API (Abstract API - https://app.abstractapi.com/dashboard) to get the user's current location upon loading the site, then passes the city's location to a weather API (Weather API from Rapid API - https://rapidapi.com/Zoom4Develop/api/weather1395/), afterwards the site takes the responses and shows the name of the city, the current temperature, precipitation per mm, humidity and wind speed.
 -It also features a search bar to find any city in the world and show these values for the searched city. It has different icons next to the city name which change depending on the weather condition of the city passed to the weather API, the background also changes depending on the weather conditions.
 -The app is also responsive.
 
