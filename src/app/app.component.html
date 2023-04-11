@@ -1,6 +1,11 @@
 <header>
-  <search-bar></search-bar>
+  <nav>
+    <form #form="ngForm" (submit)="onSubmit()">
+        <input type="text" placeholder="Search City" name="city" [(ngModel)]="cityName">
+    </form>
+  </nav>
 </header>
+
 
 <div class="background" *ngIf="weatherData">
   <!-- *ngIf="weatherData.current.is_day >= 1" -->
