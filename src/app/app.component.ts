@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { environment } from 'src/enviroments/enviroment';
 import { WeatherService } from './services/weather.service';
 import { WeatherData } from './models/weather.model';
-import { GeolocationService } from './services/geolocation.service';
 import { HttpClient } from '@angular/common/http';
 import { GeolocationData } from './models/geolocation.model';
 
@@ -20,8 +18,7 @@ export class AppComponent implements OnInit {
   
 
   constructor(private weatherService: WeatherService,
-    private http:HttpClient
-    ) {
+    private http:HttpClient) {
 
   }
 
@@ -54,6 +51,8 @@ export class AppComponent implements OnInit {
       }
     });
   }
+
+  
   geoApi = '0e85cc3431d6451890efc06c99dc9c03';
   geoUrl = 'https://ipgeolocation.abstractapi.com/v1/?api_key=' + this.geoApi;
 
