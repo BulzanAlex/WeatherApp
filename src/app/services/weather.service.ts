@@ -11,6 +11,7 @@ export class WeatherService {
 
   constructor(private http: HttpClient) { }
 
+  // this function takes the headers and their values along with the parameters from the enviroment file needed by the weather API and sends them 
   getWeatherData(cityName: string): Observable<WeatherData> {
     return this.http.get<WeatherData>(environment.weatherApiBaseUrl, {
       headers: new HttpHeaders()

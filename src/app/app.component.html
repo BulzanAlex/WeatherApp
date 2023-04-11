@@ -8,10 +8,10 @@
 
 
 <div class="background" *ngIf="weatherData">
-  <!-- *ngIf="weatherData.current.is_day >= 1" -->
   <img src="../assets/Weather-Day.jpg" *ngIf="weatherData.current.is_day >= 1 && weatherData.current.precip_mm <= 0.5" >
   <img src="../assets/Weather-Night.jpg" *ngIf="weatherData.current.is_day <= 0 && weatherData.current.precip_mm <= 0.5" >
   <img src="../assets/Weather-Rainy.jpg" *ngIf="weatherData.current.precip_mm > 0.5">
+  <img src="../assets/Weather-Rainy.jpg" *ngIf="weatherData.current.precip_mm > 0.5 && weatherData.current.temp_c <= 0">
 </div>
 
 <section class="wrapper" *ngIf="weatherData">
