@@ -1,7 +1,12 @@
+<header>
+  <search-bar></search-bar>
+</header>
+
 <div class="background" *ngIf="weatherData">
   <!-- *ngIf="weatherData.current.is_day >= 1" -->
-  <img src="../assets/Weather-Day.jpg" *ngIf="weatherData.current.is_day >= 1" >
-  <img src="../assets/Weather-Night.jpg" *ngIf="weatherData.current.is_day <= 0" >
+  <img src="../assets/Weather-Day.jpg" *ngIf="weatherData.current.is_day >= 1 && weatherData.current.precip_mm <= 0.5" >
+  <img src="../assets/Weather-Night.jpg" *ngIf="weatherData.current.is_day <= 0 && weatherData.current.precip_mm <= 0.5" >
+  <img src="../assets/Weather-Rainy.jpg" *ngIf="weatherData.current.precip_mm > 0.5">
 </div>
 
 <section class="wrapper" *ngIf="weatherData">
@@ -17,7 +22,6 @@
 
   <section class="bottom-data">
     <!-- Custom angular components, they're used to show data from the API, cardName = type of data; iconUrl = what image to show; cardValue= value received from API  -->
-    <!-- <info-card cardName="Max" iconUrl="../assets/hot.png" cardValue="26°C"></info-card> -->
     <info-card cardName="Precipitation" iconUrl="../assets/rain-chance.png" [cardValue]="weatherData.current.precip_mm + 'mm'" ></info-card>
     <info-card cardName="Humidity" iconUrl="../assets/humidity.png" [cardValue]="weatherData.current.humidity + '%'" ></info-card>
     <info-card cardName="Wind" iconUrl="../assets/wind.png" [cardValue]="weatherData.current.wind_kph + 'km/h'" ></info-card>

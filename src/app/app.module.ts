@@ -6,16 +6,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { InfoCardComponent } from './info-card/info-card.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { SearchBarComponent } from './search-bar/search-bar.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    InfoCardComponent
+    InfoCardComponent,
+    SearchBarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

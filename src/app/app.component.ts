@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
   constructor(private weatherService: WeatherService) {
 
   }
-  cityName: string = 'Lisboa'
+  cityName: string = 'Lisbon'
   weatherData?: WeatherData;
 
   ngOnInit(): void {
@@ -27,7 +27,7 @@ export class AppComponent implements OnInit {
         this.weatherData = response;
 
         console.log(response);
-
+        
         this.apiIconURL = this.weatherData.current.condition.icon;
       }
     });
